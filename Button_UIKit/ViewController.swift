@@ -29,7 +29,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         configureConstraints()
-        myButton.addTarget(self, action: #selector(myButtonClicked), for: .touchUpInside)
+        myButton.addTarget(self, action: #selector(myButtonClicked
+                                                  ), for: .touchUpInside)
         
     }
     
