@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let myButton: UIButton = {
+    private var myButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Programmed Button", for: .normal)
@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 30
         button.titleLabel?.font = UIFont(name: "Avenir", size: 25)
         
-        
         return button
     }()
 
@@ -30,7 +29,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         configureConstraints()
+        myButton.addTarget(self, action: #selector(myButtonClicked), for: .touchUpInside)
         
+    }
+    
+    // function called when button clicked
+    @objc private func myButtonClicked() {
+        view.backgroundColor = .brown
     }
 
     private func configureViews() {
